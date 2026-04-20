@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+    </script>
+
+    <script>
+        let numeros = [], cant, num;
+        cant = parseInt(prompt('Ingrese la cantidad de numeros que quiere ingresar:'));
+        for(let i = 1; i <= cant; i++) {
+            num = parseInt(prompt(`Ingrese el numero ${i}:`));
+            numeros.push(num);
+        }
+
+        const func = (nums) => {
+            for(let i = 0; i < nums.length; i++) {
+                document.write(nums[i]);
+                document.write('<br>');
+
+            }
+        };
+
+        func(numeros);
+    </script>
+</body>
+</html>
+
+<!-- el push mueve el numero ingresado al final del array -->
