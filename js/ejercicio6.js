@@ -8,3 +8,4 @@ for (let i = 0; i < edades.length; i++) {
 const promedio = suma / edades.length;
 console.log(`El promedio de las edades es: ${promedio.toFixed(2)}`);
 
+//el lenght nos permite sabes la cantidad de elementos tiene un array.
