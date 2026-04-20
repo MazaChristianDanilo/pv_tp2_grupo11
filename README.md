@@ -1,4 +1,4 @@
 # pv_tp2_grupo11
 
-Integrantes:
--Maza Danilo
+Nombres y usuarios de GitHub:
+Maza Danilo - MazaChristianDanilo
