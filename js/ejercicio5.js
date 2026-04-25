@@ -1,11 +1,8 @@
-let hora = 2;
-let min = 30;
-const convertidorASegundos = (h, m) => {
-    let segundosHora = h * 3600;
-    let segundosMinuto = m * 60;
-    return segundosHora + segundosMinuto;
-}
+const hora = 3;
+const min = 30;
 
-const res = convertidorASegundos(hora, min);
+horaASegundos = hora * 3600;
+minASegundos = min * 60;
+const res = horaASegundos + minASegundos;
 
-console.log(`La cantidad de segundos en ${hora} horas y ${min} minutos es: ${res}`);
+console.log(res);
