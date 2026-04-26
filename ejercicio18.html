@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Números</title>
+</head>
+<body>
+
+    <h1>¿Qué número es mayor?</h1>
+    
+    <button onclick="solicitarNumeros()">Empezar comparación</button>
+
+    <script>
+        // Esta es la función que realiza la lógica solicitada
+        function calcularMayor(numero1, numero2) {
+            if (numero1 > numero2) {
+                alert("El primer número (" + numero1 + ") es mayor que el segundo (" + numero2 + ").");
+            } else if (numero2 > numero1) {
+                alert("El segundo número (" + numero2 + ") es mayor que el primero (" + numero1 + ").");
+            } else {
+                alert("Ambos números son iguales: " + numero1);
+            }
+        }
+
+        // Esta función se encarga de pedir los datos al usuario
+        function solicitarNumeros() {
+            // Usamos parseFloat para convertir el texto ingresado en un número real
+            let n1 = parseFloat(prompt("Ingresa el primer número:"));
+            let n2 = parseFloat(prompt("Ingresa el segundo número:"));
+
+            // Validamos que lo ingresado sean números válidos
+            if (isNaN(n1) || isNaN(n2)) {
+                alert("Por favor, ingresa números válidos.");
+            } else {
+                // Llamamos a la función principal pasando los parámetros
+                calcularMayor(n1, n2);
+            }
+        }
+    </script>
+
+</body>
+</html>
