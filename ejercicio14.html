@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+</head>
+<body>
+    <script>
+        let numeros=[],cant,numero;
+        cant=parseInt(prompt(`Ingrese cantidad de numeros a duplicar:`));
+        for(let i=1;i<=cant;i++){
+            numero=parseInt(prompt(`Ingrese un numero a la vez y acepte:`));
+            numeros.push(numero);
+        }
+        const duplicar=(digitos)=>{
+            let duplicados=[];
+            for(i=0;i<digitos.length;i++){
+                let duplo=digitos[i]*2;
+                duplicados.push(duplo);
+            }
+            return duplicados;
+        }
+       
+        document.write(`Numeros del usuario: ${numeros}`);
+        document.write(`<br>`);
+        document.write(`Numeros del usuario duplicados:`+ duplicar(numeros));
+        
+
+    </script>
+    
+</body>
+</html>
