@@ -1,22 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculador de Promedio</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; }
+        .resultado { background-color: #f4f4f4; padding: 15px; border-radius: 8px; margin-top: 20px; }
+        b { color: #2c3e50; }
+    </style>
 </head>
 <body>
+
+    <h2>Captura de Números y Promedio</h2>
+    <p>Haz clic en el botón para iniciar el proceso.</p>
+    
+    <button onclick="procesarNumeros()">Empezar captura</button>
+
+    <div id="salida" class="resultado" style="display: none;">
+        <h3>Resultados:</h3>
+        <p id="listaNumeros"></p>
+        <p id="promedioFinal"></p>
+    </div>
+
     <script>
-      let cantidad = parseInt(prompt("¿Cuántos números deseas ingresar?"));
-      let numeros = [];
-      let suma = 0;
+        function procesarNumeros() {
+            // 1. Solicitar la cantidad de números
+            let cantidad = parseInt(prompt("¿Cuántos números deseas ingresar?"));
+            
+            if (isNaN(cantidad) || cantidad <= 0) {
+                alert("Por favor, ingresa un número válido mayor a cero.");
+                return;
+            }
 
-     if (isNaN(cantidad) || cantidad <= 0) {
-      console.log("Por favor, ingresa un número válido mayor a cero.");
-      } else {
+            let numeros = [];
+            let suma = 0;
 
-      for (let i = 0; i < cantidad; i++) {
-      let num = parseInt(prompt(`Ingresa el número entero ${i + 1}:`))   
+            // 2. Pedir los números de forma iterativa
+            for (let i = 0; i < cantidad; i++) {
+                let num = parseInt(prompt("Ingresa el número entero " + (i + 1) + ":"));
+                
+                // Validar que sea un número
+                if (isNaN(num)) {
+                    alert("Entrada no válida. Se contará como 0.");
+                    num = 0;
+                }
+                
+                numeros.push(num); // Guardar en el array
+                suma += num;       // Acumular para el promedio
+            }
+
+            // 3. Calcular el promedio
+            let promedio = suma / cantidad;
+
+            // 4. Mostrar resultados en el HTML
+            document.getElementById("salida").style.display = "block";
+            document.getElementById("listaNumeros").innerHTML = "<b>Números ingresados:</b> " + numeros.join(", ");
+            document.getElementById("promedioFinal").innerHTML = "<b>El promedio es:</b> " + promedio.toFixed(2);
+        }
     </script>
+
 </body>
 </html>
