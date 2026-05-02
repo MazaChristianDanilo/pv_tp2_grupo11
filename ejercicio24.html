@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 24</title>
+
+
+    <style>
+        body {
+            font-family: verdana;
+            background: rosybrown;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: black;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .container {
+            background: antiquewhite;
+            padding: 30px;
+            border-radius: 15px;
+        }
+    </style>
+    </head>
+
+
+<body>
+<div class="container">
+    <h2>Selecciona el lenguaje</h2>
+    <label>
+        <input type="radio" name="lenguaje" value="Python"> Python
+        <input type="radio" name="lenguaje" value="JavaScript"> JavaScript
+        <input type="radio" name="lenguaje" value="Java"> Java
+    </label>
+
+    <p class="resultado">Lenguaje seleccionado: Ninguno</p>
+    </div>
+
+    <script type="module" src="js/ejercicio24.js"></script>
+
+    
+</body>
+</html>
