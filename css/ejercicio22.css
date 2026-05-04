@@ -1,0 +1,22 @@
+:root{
+    --fondo:#b3ffff;
+    --color-fuente:#ffff00;
+    --color-rosa:#ff0066;
+}
+
+body{
+    background-color: var(--fondo);
+    text-align: center;
+    margin-top:200px;
+    border-color:black;
+    color:var(--color-rosa);
+    font-size:30px;
+    font-weight: bold;
+}
+#entrada{
+    padding:15px;
+    background-color:var(--color-rosa);
+    color:var(--color-fuente);
+    font-size:20px;
+    
+}
