@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor de Texto en Tiempo Real</title>
+
+    <style>
+        /* Estilos base */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: none;
+            box-sizing: border-box; 
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #007bff;
+        }
+
+        
+        #visor-texto {
+            margin-top: 20px;
+            padding: 20px;
+            min-height: 50px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #fafafa;
+            word-wrap: break-word; /* Para que el texto largo no se salga */
+            transition: background-color 0.5s ease, transform 0.3s;
+        }
+
+        .contador {
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Escribe algo</h2>
+        <textarea id="entrada-usuario" rows="4" placeholder="Empieza a escribir aquí..."></textarea>
+        
+        <div id="visor-texto">El texto aparecerá aquí...</div>
+        <small class="contador">Caracteres: <span id="num-caracteres">0</span></small>
+    </div>
+
+    <script>
+        
+        const textarea = document.getElementById('entrada-usuario');
+        const visor = document.getElementById('visor-texto');
+        const contador = document.getElementById('num-caracteres');
+
+    
+        textarea.addEventListener('input', () => {
+            const contenido = textarea.value;
+            const longitud = contenido.length;
+
+            
+            visor.textContent = contenido || "El texto aparecerá aquí...";
+
+            // 2. Actualizar el contador visual
+            contador.textContent = longitud;
+
+            
+            if (longitud > 20) {
+                visor.style.backgroundColor = "#ffeb3b"; 
+                visor.style.color = "#856404";
+                visor.style.fontWeight = "bold";
+            } else {
+                visor.style.backgroundColor = "#fafafa"; 
+                visor.style.color = "#333";
+                visor.style.fontWeight = "normal";
+            }
+        });
+    </script>
+
+</body>
+</html>

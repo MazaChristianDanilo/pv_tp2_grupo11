@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción con JS</title>
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #texto-dinamico {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p id="texto-dinamico"> trabajo practico de programacion visual.</p>
+        <button id="mi-boton">Cambiar texto</button>
+    </div>
+
+    <script>
+    
+        const parrafo = document.getElementById('texto-dinamico');
+        const boton = document.getElementById('mi-boton');
+
+        
+        boton.addEventListener('click', () => {
+            
+            parrafo.textContent = "¡El texto ha sido modificado con éxito! 🎉";
+            
+            
+            parrafo.style.color = "#28a745";
+            parrafo.style.fontWeight = "bold";
+        });
+    </script>
+
+</body>
+</html>
